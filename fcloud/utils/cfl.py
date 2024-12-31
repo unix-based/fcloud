@@ -1,10 +1,10 @@
 import os
 from pathlib import Path
 
-from ..exceptions.cfl_errors import CFLError
-from ..exceptions.file_errors import FileError
 from ..exceptions.base_errors import FcloudError
+from ..exceptions.cfl_errors import CFLError
 from ..exceptions.exceptions import FcloudException
+from ..exceptions.file_errors import FileError
 
 
 def create_cfl(
@@ -27,11 +27,11 @@ def create_cfl(
         with open(new_path, "w", encoding="utf-8") as cfl:
             cfl.write(f"%cfl:{main_folder / filename}")
     except PermissionError:
-        raise FcloudException(*FileError.perrmission_denied)
+        raise FcloudException(*FileError.permission_denied)
     except FileExistsError:
         raise FcloudException(*FileError.not_exists_error)
     except Exception as err:
-        title, message = FcloudError.uknown_error
+        title, message = FcloudError.unknown_error
         raise FcloudException(title, message.format(err))
 
 
@@ -63,9 +63,9 @@ def delete_cfl(cfl: Path) -> None:
     try:
         os.remove(cfl)
     except PermissionError:
-        raise FcloudException(*FileError.perrmission_denied)
+        raise FcloudException(*FileError.permission_denied)
     except FileExistsError:
         raise FcloudException(*FileError.not_exists_error)
     except Exception as err:
-        title, message = FcloudError.uknown_error
+        title, message = FcloudError.unknown_error
         raise FcloudException(title, message.format(err))

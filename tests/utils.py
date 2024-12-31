@@ -2,6 +2,7 @@ import os
 import sys
 import shutil
 import subprocess
+from typing import Optional
 
 from functools import wraps
 from contextlib import suppress
@@ -16,8 +17,10 @@ OUTPUT_SETTINGS = {
 def run_command(
     *args,
     timeout: int,
-    output_settings: dict = OUTPUT_SETTINGS,
+    output_settings: Optional[dict] = None,
 ) -> subprocess.CompletedProcess:
+    if output_settings is None:
+        output_settings = OUTPUT_SETTINGS
     process = subprocess.run(*args, **output_settings, timeout=timeout)
     return process
 

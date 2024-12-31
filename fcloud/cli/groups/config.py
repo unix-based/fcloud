@@ -4,7 +4,6 @@ from typing import Optional
 
 from ...utils.config import edit_config
 from ...models.settings import UserArgument
-
 from ...exceptions.driver_errors import DriverError
 from ...exceptions.exceptions import FcloudException
 
@@ -37,7 +36,7 @@ class Config:
     def set_parametr(
         self, section: UserArgument, parametr_name: UserArgument, value: UserArgument
     ):
-        "Set amy parametr to configuration"
+        """Set amy parameter to configuration"""
         edit_config(str(section), str(parametr_name), str(value))
 
     cloud = set_cloud

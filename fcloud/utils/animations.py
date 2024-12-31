@@ -1,17 +1,21 @@
+import os
+import functools
+from sys import stdout
+from typing import Optional
+
 import animation as _animation
 import cursor
 
 
-import os
-import functools
-from sys import stdout
-
 
 def animation(
     title: str = "Waiting",
-    animation_symbols: list = ["|", "/", "-", "|", "-", "\\"],
+    animation_symbols: Optional[list] = None,
     speed: float = 0.4,
 ):
+    if animation_symbols is None:
+        animation_symbols = ["|", "/", "-", "|", "-", "\\"]
+
     def decorator(
         func,
     ):

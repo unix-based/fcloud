@@ -7,7 +7,7 @@ class FileError(FcloudError):
         "Unable to find this file",
     )
 
-    perrmission_denied = (
+    permission_denied = (
         "Permission denied",
         "Access rights error",
     )

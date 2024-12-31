@@ -6,7 +6,6 @@ from textwrap import dedent
 from typing import Optional
 from typing import Generic
 
-
 from prettytable import PrettyTable
 
 from ..models.driver import T
@@ -14,16 +13,13 @@ from ..models.driver import Driver
 from ..models.settings import Config as _Config
 from ..models.settings import CloudObj
 from ..models.settings import UserArgument
-
 from ..utils.cfl import create_cfl
 from ..utils.cfl import delete_cfl
 from ..utils.cfl import read_cfl
 from ..utils.animations import animation
-
 from .groups.config import Config
 from .groups.dropbox import Dropbox
 from .groups.yandex import Yandex
-
 from ..drivers.base import CloudProtocol
 from ..exceptions.cfl_errors import CFLError
 from ..exceptions.file_errors import FileError
@@ -48,8 +44,6 @@ class Fcloud:
             drivers (list[Driver]): List of supported cloud storage
             config (_Config, optional): Dataclass containing: service (driver name),
               main_folder, cloud authorization data, cfl_extension
-            with_driver (bool, optional): Use when you need to connect to the cloud.
-              For example, for tests, --help, etc., use False. The default value is True.
         """
         # init subcommands `fcloud config`, `fcloud dropbox` ...
         self.config = Config([x.name for x in drivers])
@@ -87,7 +81,7 @@ class Fcloud:
     def _to_path(self, path: UserArgument) -> Path:
         return Path(str(path))
 
-    def _to_remote_path(self, path: UserArgument | None) -> Path:
+    def _to_remote_path(self, path: Optional[UserArgument]) -> Path:
         return self._main_folder if path is None else self._to_path(path)
 
     @animation("Uploading")
@@ -98,7 +92,7 @@ class Fcloud:
         filename: Optional[UserArgument] = None,
         remote_path: Optional[UserArgument] = None,
     ) -> None:
-        """Uploud file to cloud. More: https://fcloud.tech/docs/usage/commands/#add
+        """Upload file to cloud. More: https://fcloud.tech/docs/usage/commands/#add
         Args:
             -p --path (UserArgument): Local path to file
             -n --near (bool, optional): Create cloud file link
@@ -248,9 +242,9 @@ class Fcloud:
 
         for file in files:
             if not file.is_directory and only_files:
-                files_table.add_row([file.name, file.size, file.modifed])
+                files_table.add_row([file.name, file.size, file.modified])
             elif not file.is_directory:
-                files_table.add_row([file.name, file.size, False, file.modifed])
+                files_table.add_row([file.name, file.size, False, file.modified])
             elif file.is_directory and not only_files:
                 files_table.add_row([file.name, None, True, None])
 

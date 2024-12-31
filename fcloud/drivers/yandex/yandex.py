@@ -1,6 +1,5 @@
 import os
 from yadisk import Client
-
 from pathlib import Path
 from typing import Callable
 from functools import wraps
@@ -13,7 +12,6 @@ from yadisk.exceptions import ForbiddenError
 
 from .errors import YandexException
 from .errors import YandexError
-
 from .models import YandexAuth
 from ..base import CloudProtocol
 from ...models.settings import CloudObj
@@ -46,9 +44,9 @@ def yandex_api_error(func: Callable):
         except FileNotFoundError:
             raise YandexException(*FileError.not_exists_error)
         except PermissionError:
-            raise YandexException(*FileError.perrmission_denied)
+            raise YandexException(*FileError.permission_denied)
         except Exception as er:
-            title, message = YandexError.uknown_error
+            title, message = YandexError.unknown_error
             raise YandexException(title.format(er), message.format(er))
 
     return inner
@@ -89,7 +87,7 @@ class YandexCloud(CloudProtocol):
                 name=file.name,
                 size=file.size,
                 is_directory=file.type == "dir",
-                modifed=file.modified,
+                modified=file.modified,
             )
             for file in self._app.listdir(remote_path.as_posix())
         ]

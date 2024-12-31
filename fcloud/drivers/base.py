@@ -46,8 +46,7 @@ class CloudProtocol(Protocol):
         """Delete a file in the cloud by his cfl
 
         Args:
-            filename (str): File name in the cloud
-            remote_path (Path): Path to the file in the cloud
+            path (str): Path to the file in the cloud
         """
         pass
 
