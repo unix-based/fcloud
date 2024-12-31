@@ -1,5 +1,4 @@
 from typing import TypeVar
-from typing import Generic
 from typing import Type
 from dataclasses import dataclass
 

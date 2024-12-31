@@ -12,15 +12,15 @@ class DropboxError(DriverError):
         Maybe the connection data is specified incorrectly
         or is missing from the configuration file. It is also 
         possible that the token has expired.
-        More: http://fcloud.tech/docs/clouds/dropbox/connect/""",
+        More: https://fcloud.tech/docs/clouds/dropbox/connect/""",
         ),
     )
 
-    perrmission_denied_error = (
+    permission_denied_error = (
         "Permission denied",
         dedent("""\
         Perhaps you have not granted permissions to the file.
-        More: http://fcloud.tech/docs/clouds/dropbox/errors/"""),
+        More: https://fcloud.tech/docs/clouds/dropbox/errors/"""),
     )
 
     invalid_token_error = (
@@ -40,7 +40,7 @@ class DropboxError(DriverError):
         Here is an example of a folder path: /films/2024"""),
     )
 
-    uncorrect_data_error = (
+    incorrect_data_error = (
         "Api data validation error",
         dedent("""\
         You may not have filled in the required fields in .conf or you may have entered invalid values.

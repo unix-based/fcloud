@@ -1,3 +1,4 @@
+# todo: Full refactoring of config parsing
 import configparser
 import os
 from pathlib import Path
@@ -6,11 +7,9 @@ from typing import Optional
 from .exceptions.config_errors import ConfigError
 from .exceptions.driver_errors import DriverError
 from .exceptions.exceptions import FcloudConfigException
-
 from .models.settings import Config
 from .models.settings import Fields
 from .models.driver import Driver
-
 from .utils.config import get_field
 from .utils.config import get_section
 

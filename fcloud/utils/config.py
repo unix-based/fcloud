@@ -2,7 +2,6 @@ import os
 import configparser
 from typing import Optional
 
-
 from ..exceptions.config_errors import ConfigError
 from ..exceptions.base_errors import FcloudError
 from ..exceptions.exceptions import FcloudConfigException
@@ -19,12 +18,12 @@ def edit_config(section: str, name: str, value: str) -> None:
     except FileNotFoundError:
         raise FcloudConfigException(*ConfigError.config_not_found)
     except PermissionError:
-        raise FcloudConfigException(*ConfigError.perrmission_denied)
+        raise FcloudConfigException(*ConfigError.permission_denied)
 
 
 def get_field(
     parameter: str,
-    error: tuple[str, str] = FcloudError.uknown_error,
+    error: tuple[str, str] = FcloudError.unknown_error,
     config: Optional[configparser.ConfigParser] = None,
     section: str = "FCLOUD",
 ) -> str:
@@ -41,7 +40,7 @@ def get_field(
 
 def get_section(
     section: str = "FCLOUD",
-    error: tuple[str, str] = FcloudError.uknown_error,
+    error: tuple[str, str] = FcloudError.unknown_error,
     config: Optional[configparser.ConfigParser] = None,
 ) -> configparser.SectionProxy:
     if not config:

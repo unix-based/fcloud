@@ -5,10 +5,8 @@ from textwrap import dedent
 from ...exceptions.base_errors import FcloudError
 from ...exceptions.exceptions import FcloudException
 from ...exceptions.config_errors import ConfigError
-
 from ...drivers.dropbox.models import TokenData
 from ...drivers.dropbox.models import DropboxAuth
-
 from ...utils.config import edit_config
 from ...utils.config import get_field
 
@@ -62,6 +60,6 @@ class Dropbox:
             return TokenData(**result)
         else:
             raise FcloudException(
-                result.get("error", FcloudError.uknown_error),
+                result.get("error", FcloudError.unknown_error),
                 result.get("error_description", "No error description").capitalize(),
             )

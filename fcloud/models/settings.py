@@ -30,4 +30,4 @@ class CloudObj:
     name: str
     size: int | None
     is_directory: bool
-    modifed: str | None
+    modified: str | None

@@ -20,11 +20,6 @@ class YandexError(DriverError):
         "The requested resource (file or folder) was not found in the cloud.",
     )
 
-    invalid_token_error = (
-        "Invalid token",
-        """The token has expired or the token doesn't exist.""",
-    )
-
     access_denied = (
         "Access denied",
         dedent("""\

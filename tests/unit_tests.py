@@ -27,7 +27,7 @@ def test_cfl_util():
     with open(TMP_PATH + ex, "r") as cfl:
         assert cfl.read() == "%cfl:/main/folder/filename"
 
-    delete_cfl(TMP_PATH + ex)
+    delete_cfl(Path(TMP_PATH + ex))
     assert not os.path.isfile(TMP_PATH + ex)
 
 
@@ -39,7 +39,7 @@ def test_cfl_util_near():
     assert os.path.isfile(TMP_PATH + ex)
     assert os.path.isfile(TMP_PATH)
 
-    delete_cfl(TMP_PATH + ex)
+    delete_cfl(Path(TMP_PATH + ex))
 
 
 def test_generate_new_name():
@@ -64,7 +64,7 @@ def test_config_utils():
 
     flag = False
     try:
-        get_field("some_parametr", section="SOME_SERVICE")
+        get_field("some_parameter", section="SOME_SERVICE")
     except FcloudException:
         flag = True
     assert flag

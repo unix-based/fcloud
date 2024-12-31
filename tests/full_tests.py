@@ -85,21 +85,21 @@ def test_remove_only_in_cloud():
 
 @utils.catch
 def test_with_dir():
-    main_fodler = utils.create_temp_dir()
+    main_folder = utils.create_temp_dir()
 
     add = run_command([KEYWORD, "add", TMP_DIR + "lessons"], timeout=TIMEOUT * 2)
     assert not add.returncode
-    assert os.path.isfile(f"{main_fodler}homework.txt{CFL_EX}")
-    assert os.path.isfile(f"{main_fodler}russian{os.sep}my_plane.docx{CFL_EX}")
+    assert os.path.isfile(f"{main_folder}homework.txt{CFL_EX}")
+    assert os.path.isfile(f"{main_folder}russian{os.sep}my_plane.docx{CFL_EX}")
     assert os.path.isfile(
-        f"{main_fodler}russian{os.sep}grammar{os.sep}lesson.mp4{CFL_EX}"
+        f"{main_folder}russian{os.sep}grammar{os.sep}lesson.mp4{CFL_EX}"
     )
 
     get = run_command([KEYWORD, "get", TMP_DIR + "lessons"], timeout=TIMEOUT * 2)
     assert not get.returncode
     assert not add.returncode
-    assert os.path.isfile(f"{main_fodler}homework.txt")
-    assert os.path.isfile(f"{main_fodler}russian{os.sep}my_plane.docx")
-    assert os.path.isfile(f"{main_fodler}russian{os.sep}grammar{os.sep}lesson.mp4")
+    assert os.path.isfile(f"{main_folder}homework.txt")
+    assert os.path.isfile(f"{main_folder}russian{os.sep}my_plane.docx")
+    assert os.path.isfile(f"{main_folder}russian{os.sep}grammar{os.sep}lesson.mp4")
 
-    shutil.rmtree(main_fodler)
+    shutil.rmtree(main_folder)
