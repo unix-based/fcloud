@@ -16,14 +16,14 @@ In the classic sense, cloud storage works on a <i>file-to-cloud</i> basis. They 
 
 <h2>Installation</h2>
 <h3>Windows:</h3>
-Download the ready installers here:  https://github.com/theakopov/fcloud/releases.
+Download the ready installers here:  https://github.com/unix-based/fcloud/releases.
 
 
 <h3>Linux:</h3>
 Download the project using <i>pipx</i>:
 
 ```bash
-pipx install https://github.com/theakopov/fcloud/archive/refs/heads/main.zip
+pipx install https://github.com/unix-based/fcloud/archive/refs/heads/main.zip
 ```
 
 > First, it must be installed on your system - [install pipx](https://pipx.pypa.io/stable/installation/)

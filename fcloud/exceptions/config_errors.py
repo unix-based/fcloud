@@ -9,7 +9,7 @@ class ConfigError(FileError):
         dedent("""\
         Can`t parse '{}' from '{}'. Most likely your configuration file 
         is corrupted. You can reinstall fcloud or manually replace the configuration file with 
-        this one: https://github.com/theakopov/fcloud/blob/main/fcloud/.conf.'"""),
+        this one: https://github.com/unix-based/fcloud/blob/main/fcloud/.conf.'"""),
     )
 
     section_error = (
@@ -19,13 +19,13 @@ class ConfigError(FileError):
 
     config_not_found = (
         "Can`t find config file",
-        ".conf need to be in <programm folder>/fcloud or be in the environment variable $FCLOUD_CONFIG_PATH",
+        ".conf need to be in <program folder>/fcloud or be in the environment variable $FCLOUD_CONFIG_PATH",
     )
 
     field_emty_error = (
         "The required '{}' field is missing",
         dedent("""\
-        The field required by fcloud is empty.  Use 'fcloud config set-parametr {} {} <value>' to set the required value. 
+        The field required by fcloud is empty.  Use 'fcloud config set-parameter {} {} <value>' to set the required value. 
         * Substitute the required value in place of <value>.
         """),
     )

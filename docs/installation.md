@@ -1,13 +1,9 @@
 # Installation
-#### Installation
-### Windows:
-Download the ready installers here:  [https://github.com/theakopov/fcloud/releases](https://github.com/theakopov/fcloud/releases).
 
-### Linux:
 Download the project using <i>pipx</i>:
-> install it before - [https://pipx.pypa.io/latest/installation/](https://pipx.pypa.io/latest/installation/)
+> install it before - [pipx.pypa.io/latest/installation/](https://pipx.pypa.io/latest/installation/)
 ```bash
-pipx install https://github.com/theakopov/fcloud/archive/refs/heads/main.zip
+pipx install https://github.com/unix-based/fcloud/archive/refs/heads/main.zip
 ```
 
 #### Set up
