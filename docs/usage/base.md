@@ -38,6 +38,6 @@ Quick introduction to basic commands:
 * *remove* - Delete a file from the cloud
 * *info* - Get information about a file
 * *files* - List files in the cloud
-* *config* - Command group for interfacing with the configuration. Read more at [https://fcloud.tech/docs/usage/configuration/](/docs/usage/configuration/)
+* *config* - Command group for interfacing with the configuration. Read more at [https://fcloud.readthedocs.io/en/latest/usage/configuration/](/docs/usage/configuration/)
 
 

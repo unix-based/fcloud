@@ -92,7 +92,7 @@ class Fcloud:
         filename: Optional[UserArgument] = None,
         remote_path: Optional[UserArgument] = None,
     ) -> None:
-        """Upload file to cloud. More: https://fcloud.tech/docs/usage/commands/#add
+        """Upload file to cloud. More: https://fcloud.readthedocs.io/en/latest/usage/commands/#add
         Args:
             -p --path (UserArgument): Local path to file
             -n --near (bool, optional): Create cloud file link
@@ -140,7 +140,7 @@ class Fcloud:
         near: bool = False,
         remove_after: bool = True,
     ) -> None:
-        """Get file from cloud. More: https://fcloud.tech/docs/usage/commands/#get
+        """Get file from cloud. More: https://fcloud.readthedocs.io/en/latest/usage/commands/#get
 
         Args:
             -c --cfl (UserArgument): File link to a file in the cloud,
@@ -184,7 +184,7 @@ class Fcloud:
 
     @animation("Information collection")
     def info(self, cfl: UserArgument) -> dict:
-        """Info about file. More: https://fcloud.tech/docs/usage/commands/#info
+        """Info about file. More: https://fcloud.readthedocs.io/en/latest/usage/commands/#info
 
         Args:
             -c --cfl (UserArgument): File-link path
@@ -193,7 +193,7 @@ class Fcloud:
         return self._driver.info(read_cfl(lcfl))
 
     def remove(self, cfl: UserArgument, only_in_cloud: bool = False) -> None:
-        """Will delete a file in the cloud by cfl. More: https://fcloud.tech/docs/usage/commands/#remove
+        """Will delete a file in the cloud by cfl. More: https://fcloud.readthedocs.io/en/latest/usage/commands/#remove
 
         Args:
             -c --cfl (UserArgument):  File-link path
@@ -219,7 +219,7 @@ class Fcloud:
     def files(
         self, remote_path: Optional[UserArgument] = None, only_files: bool = False
     ) -> PrettyTable:
-        """Get info about all files. More: https://fcloud.tech/docs/usage/commands/#files
+        """Get info about all files. More: https://fcloud.readthedocs.io/en/latest/usage/commands/#files
 
         Args:
             -r --remote_path (UserArgument, optional): You have the option
