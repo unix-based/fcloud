@@ -22,7 +22,7 @@ $ fcloud get film.mp4.cfl
 $ ls
 > film.mp4  # 2 gb
 
-Read more - https://fcloud.tech/docs/usage/commands/
+Read more - https://fcloud.readthedocs.io/en/latest/usage/commands/
 """
 
 import contextlib

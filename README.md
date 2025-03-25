@@ -6,7 +6,6 @@
 
 <img src=https://img.shields.io/badge/cli-app-blue> <img src=https://img.shields.io/badge/version-1.0.0-orange> <img src=https://img.shields.io/badge/simple-docs-green> <img src=https://img.shields.io/badge/language-python-yellow>
 
-<img src="https://fcloud.tech/files/how_it_works.gif" alt="Fcloud in action" width="100%">
 </div>
 
 ---
@@ -55,7 +54,7 @@ $ ls
 > film.mp4  # 2 gb
 ```
 
-Read more here: https://fcloud.tech/docs/usage/base/
+Read more here: https://fcloud.readthedocs.io/en/latest/usage/base/
 
 
 <h2>License</h2>

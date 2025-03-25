@@ -1,6 +1,6 @@
 # Change Log
 
-This document records all notable changes to [fcloud](https://fcloud.tech/docs).
+This document records all notable changes to [fcloud](https://fcloud.readthedocs.io/).
 
 ## 1.0.0 (2024-09-01)
 
